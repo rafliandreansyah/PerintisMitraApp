@@ -12,4 +12,7 @@
     <string name="daftar_mitra">Daftar Mitra</string>
     <string name="masukkan_email_yang_telah_terdaftar">Masukkan email yang telah terdaftar</string>
     <string name="illustration_reset_password">illustration reset password</string>
+    <string name="silahkan_cek_email_untuk_reset_password">Silahkan cek email untuk reset password</string>
+    <string name="illustration_reset_password_info">illustration reset password info</string>
+    <string name="kembali_login">Kembali Login</string>
 </resources>
