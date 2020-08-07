@@ -2,4 +2,12 @@
     <string name="app_name">PerintisMitraApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="illustartion_login">illustartion login</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="masuk">Masuk</string>
+    <string name="lupa_password">Lupa password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="daftar_mitra">Daftar Mitra</string>
 </resources>
