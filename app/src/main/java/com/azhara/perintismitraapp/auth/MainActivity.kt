@@ -1,7 +1,8 @@
-package com.azhara.perintismitraapp
+package com.azhara.perintismitraapp.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.azhara.perintismitraapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
