@@ -10,4 +10,6 @@
     <string name="lupa_password">Lupa password?</string>
     <string name="reset_password">Reset Password</string>
     <string name="daftar_mitra">Daftar Mitra</string>
+    <string name="masukkan_email_yang_telah_terdaftar">Masukkan email yang telah terdaftar</string>
+    <string name="illustration_reset_password">illustration reset password</string>
 </resources>
