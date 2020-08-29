@@ -15,4 +15,18 @@
     <string name="silahkan_cek_email_untuk_reset_password">Silahkan cek email untuk reset password</string>
     <string name="illustration_reset_password_info">illustration reset password info</string>
     <string name="kembali_login">Kembali Login</string>
+    <string name="pengajuan_nmitra">Pengajuan\nMitra</string>
+    <string name="illustartion_register">illustartion register</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="telephone">Telephone</string>
+    <string name="merk_mobil">Merk Mobil</string>
+    <string name="transmisi">Transmisi</string>
+    <string name="tahun">Tahun</string>
+    <string name="nomer_registrasi_kendaraan">Nomer Registrasi Kendaraan</string>
+    <string name="gambar_mobil_yang_diajukan">Gambar mobil yang diajukan</string>
+    <string name="image_car">image car</string>
+    <string name="pilih_gambar">Pilih Gambar</string>
+    <string name="saya_setuju_dengan_syarat_dan_ketentuan_yang_berlaku">Saya setuju dengan syarat dan ketentuan yang berlaku</string>
+    <string name="download_dokumen">Download Dokumen</string>
+    <string name="kirim_pengajuan">Kirim Pengajuan</string>
 </resources>
