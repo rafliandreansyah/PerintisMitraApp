@@ -3,12 +3,342 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.dashboard.DashboardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:paddingHorizontal="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingTop="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/layout_title_dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:id="@+id/tv_dashboard_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard"
+                            android:textSize="20sp"
+                            android:textColor="@color/cardview_light_background"
+                            tools:ignore="RelativeOverlap" />
+
+                        <ImageView
+                            android:id="@+id/ic_notification"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_notification"
+                            android:contentDescription="@string/icon_notification" />
+
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        app:cardElevation="@dimen/cardview_default_elevation"
+                        app:cardCornerRadius="@dimen/cardview_default_radius">
+                        
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:id="@+id/layout_img_profile"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:elevation="4dp"
+                                app:shape_circle_borderColor="@color/colorYellow"
+                                app:shape_circle_borderWidth="2dp"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/img_profile_dashboard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@color/colorPrimary"
+                                    android:contentDescription="@string/image_profile_dashboard" />
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                            <LinearLayout
+                                android:id="@+id/layout_profile_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@id/layout_img_profile">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16sp"
+                                    android:text="Rafli Andreansyah"
+                                    android:textColor="@color/colorPrimaryText"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="rafliandreansyah@gmail.com"
+                                    android:textColor="@color/colorSecondaryText"/>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ic_setting"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_setting"
+                                android:contentDescription="@string/icon_setting" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/cardview_default_radius"
+                    android:elevation="@dimen/cardview_default_elevation"
+                    android:layout_marginHorizontal="20dp">
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="20dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="30dp"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryText"
+                                android:text="@string/total_booking"
+                                android:textSize="14sp"/>
+                            <TextView
+                                android:id="@+id/tv_total_booking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@color/colorPrimaryText"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="50dp"
+                            android:background="@color/colorPrimaryText"
+                            android:layout_marginHorizontal="40dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryText"
+                                android:text="@string/mobil_terdaftar"
+                                android:textSize="14sp"/>
+                            <TextView
+                                android:id="@+id/tv_total_car_register"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@color/colorPrimaryText"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="1dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/car_img_dashboard"
+                            android:contentDescription="@string/image_dashboard_car" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/linear_gradient_black"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerInParent="true"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tv_menu_title_car"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mobil"
+                                android:textColor="@color/cardview_light_background"
+                                android:textStyle="bold"
+                                android:textSize="18sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_menu_description_car"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/daftar_mobil_anda"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/cardview_light_background"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="1dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/booked_img_dashboard"
+                            android:contentDescription="@string/image_car_booked" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/linear_gradient_black"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerInParent="true"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tv_menu_title_booked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/disewa"
+                                android:textColor="@color/cardview_light_background"
+                                android:textStyle="bold"
+                                android:textSize="18sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_menu_description_booked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/daftar_penyewa_mobil_anda"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/cardview_light_background"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/register_car_img_dashboard"
+                        android:contentDescription="@string/image_register_car" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/linear_gradient_black"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="40dp">
+                        <TextView
+                            android:id="@+id/tv_menu_title_register_car"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pengajuan_mobil"
+                            android:textColor="@color/cardview_light_background"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_menu_description_regiter_car"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tambah_mobil_yang_anda_sewa_dengan_mendaftarkannya_disini"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

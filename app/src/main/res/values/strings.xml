@@ -32,4 +32,19 @@
     <string name="pengajuan_mitra_berhasil">Pengajuan Mitra Berhasil</string>
     <string name="tunngu_pemberitahuan_dari_admin_maksimal_3x24_jam_yang_akan_dihubungi_lewat_email_atau_telepon_yang_anda_diajukan">Tunngu pemberitahuan dari admin maksimal 3x24 jam yang akan dihubungi lewat email atau telepon yang anda diajukan</string>
     <string name="illustration_register_info">illustration register info</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="icon_notification">icon_notification</string>
+    <string name="image_profile_dashboard">Image Profile Dashboard</string>
+    <string name="icon_setting">icon setting</string>
+    <string name="total_booking">Total Booking</string>
+    <string name="mobil_terdaftar">Mobil Terdaftar</string>
+    <string name="image_dashboard_car">image dashboard car</string>
+    <string name="tambah_mobil_yang_anda_sewa_dengan_mendaftarkannya_disini">Tambah mobil yang anda sewa dengan mendaftarkannya disini</string>
+    <string name="pengajuan_mobil">Pengajuan Mobil</string>
+    <string name="daftar_penyewa_mobil_anda">Daftar penyewa mobil anda</string>
+    <string name="disewa">Disewa</string>
+    <string name="daftar_mobil_anda">Daftar Mobil Anda</string>
+    <string name="mobil">Mobil</string>
+    <string name="image_register_car">image register car</string>
+    <string name="image_car_booked">image car booked</string>
 </resources>
