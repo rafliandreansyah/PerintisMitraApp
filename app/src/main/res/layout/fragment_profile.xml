@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.56">
+
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:id="@+id/img_profile_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:elevation="4dp"
+                app:shape_circle_borderWidth="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image_profile"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/car_img_dashboard" />
+
+            </com.github.florent37.shapeofview.shapes.CircleView>
+
+
+            <TextView
+                android:id="@+id/tv_name_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@id/img_profile_layout"
+                android:text="Rafli Andreansyah"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_email_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name_profile"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/img_profile_layout"
+                android:text="rafliandreansyah@gmail.com"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_phone_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_email_profile"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/img_profile_layout"
+                android:text="081232720821"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="248dp"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/change_password"
+            style="@style/ButtonPrimary"
+            app:icon="@drawable/ic_change_password"
+            android:backgroundTint="@color/colorYellow"
+            android:drawableStart="@drawable/ic_change_password"
+            app:layout_constraintEnd_toEndOf="@+id/btn_edit_profile"
+            app:layout_constraintStart_toStartOf="@+id/btn_edit_profile"
+            app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile" />
+
+        <Button
+            android:id="@+id/btn_edit_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile"
+            android:drawableStart="@drawable/ic_edit_profile"
+            style="@style/ButtonPrimary"
+            app:icon="@drawable/ic_edit_profile"
+            android:layout_marginHorizontal="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:textColor="@color/colorRed"
+            app:strokeColor="@color/colorRed"
+            app:icon="@drawable/ic_logout"
+            app:iconTint="@color/colorRed"
+            style="@style/ButtonOutline"
+            app:layout_constraintEnd_toEndOf="@+id/btn_change_password"
+            app:layout_constraintStart_toStartOf="@+id/btn_change_password"
+            app:layout_constraintTop_toBottomOf="@+id/btn_change_password" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

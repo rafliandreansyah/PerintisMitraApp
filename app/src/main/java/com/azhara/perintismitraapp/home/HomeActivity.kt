@@ -21,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
                 R.layout.fragment_car,
                 R.layout.fragment_car_booked,
                 R.layout.fragment_car_register,
-                R.layout.fragment_edti_profile
+                R.layout.fragment_edit_profile
             )
         )
 

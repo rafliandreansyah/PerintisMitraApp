@@ -47,4 +47,8 @@
     <string name="mobil">Mobil</string>
     <string name="image_register_car">image register car</string>
     <string name="image_car_booked">image car booked</string>
+    <string name="image_profile">image profile</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.azhara.perintismitraapp.home.editprofile.viewmodel
+package com.azhara.perintismitraapp.home.profile.viewmodel
 
 import androidx.lifecycle.ViewModel
 
