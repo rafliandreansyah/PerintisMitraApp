@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="20dp"
-                android:hint="Alamat Lengkap"
+                android:hint="@string/alamat_lengkap"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
