@@ -131,7 +131,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_edt_car_type_register"
+                android:id="@+id/layout_edt_car_type_register_car"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
@@ -148,7 +148,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_edt_transmission_register"
+                android:id="@+id/layout_edt_transmission_register_car"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
@@ -164,7 +164,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_edt_year_register"
+                android:id="@+id/layout_edt_year_register_car"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
@@ -181,7 +181,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_edt_number_car_register"
+                android:id="@+id/layout_edt_number_car_register_car"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
@@ -221,7 +221,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/btn_add_image_register"
+                android:id="@+id/btn_add_image_register_car"
                 style="@style/ButtonOutline"
                 android:text="@string/pilih_gambar"
                 android:layout_marginHorizontal="45dp"
@@ -243,7 +243,7 @@
                 android:text="@string/download_dokumen"/>
 
             <Button
-                android:id="@+id/btn_send_register"
+                android:id="@+id/btn_send_register_car"
                 style="@style/ButtonPrimary"
                 android:text="@string/kirim_pengajuan"
                 android:layout_marginHorizontal="45dp"
