@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.azhara.perintismitraapp.home.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.azhara.perintismitraapp.home.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.azhara.perintismitraapp.home.car.CarFragment"
+        android:label="fragment_car"
+        tools:layout="@layout/fragment_car" />
+    <fragment
+        android:id="@+id/carRegisterFragment"
+        android:name="com.azhara.perintismitraapp.home.carregister.CarRegisterFragment"
+        android:label="fragment_car_register"
+        tools:layout="@layout/fragment_car_register" />
+    <fragment
+        android:id="@+id/edtiProfileFragment"
+        android:name="com.azhara.perintismitraapp.home.profile.editprofile.EdtiProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.azhara.perintismitraapp.home.profile.changepassword.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/carBookedFragment"
+        android:name="com.azhara.perintismitraapp.home.carbooked.CarBookedFragment"
+        android:label="fragment_car_booked"
+        tools:layout="@layout/fragment_car_booked" />
+
+
+</navigation>
