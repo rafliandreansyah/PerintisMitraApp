@@ -52,4 +52,9 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="change_password">Change Password</string>
     <string name="alamat_lengkap">Alamat Lengkap</string>
+
+    //Error message
+    <string name="error_message_password">Password yang anda masukkan salah!</string>
+    <string name="error_message_password_from_firebase">The password is invalid or the user does not have a password.</string>
+    <string name="error_message_email_not_register">Akun anda tidak terdaftar mitra perintis!</string>
 </resources>

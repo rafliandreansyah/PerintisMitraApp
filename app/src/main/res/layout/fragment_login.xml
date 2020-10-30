@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".auth.login.LoginFragment">
 
     <ScrollView
@@ -58,6 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="20dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/colorPrimary"
                 android:hint="@string/email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -75,6 +78,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="20dp"
+                app:errorEnabled="true"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/colorPrimary"
                 android:hint="@string/password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -86,9 +92,10 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btn_login"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
                 android:text="@string/masuk"
+                android:enabled="false"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="30dp"
                 style="@style/ButtonPrimary"/>
@@ -120,6 +127,7 @@
                     android:layout_weight="1"
                     android:gravity="end">
                     <Button
+                        android:id="@+id/btnResetPassword"
                         android:layout_width="wrap_content"
                         android:text="@string/reset_password"
                         android:layout_centerVertical="true"
@@ -129,7 +137,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_to_register"
+                android:id="@+id/btnToRegister"
                 style="@style/ButtonOutline"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="40dp"
