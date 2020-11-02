@@ -165,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <Button
-        android:id="@+id/btn_send_register_car"
+        android:id="@+id/btnSendRegisterMitra"
         style="@style/ButtonPrimaryConstraint"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"

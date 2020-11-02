@@ -9,12 +9,32 @@
         android:id="@+id/dashboardFragment"
         android:name="com.azhara.perintismitraapp.home.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_carBookedFragment"
+            app:destination="@id/carBookedFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_carRegisterFragment"
+            app:destination="@id/carRegisterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.azhara.perintismitraapp.home.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_edtiProfileFragment"
+            app:destination="@id/edtiProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
     <fragment
         android:id="@+id/carFragment"
         android:name="com.azhara.perintismitraapp.home.car.CarFragment"

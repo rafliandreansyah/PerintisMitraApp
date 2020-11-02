@@ -41,7 +41,7 @@
                 android:layout_marginTop="30dp"/>
 
             <Button
-                android:id="@+id/btn_to_login"
+                android:id="@+id/btnToLogin"
                 style="@style/ButtonPrimary"
                 android:text="@string/kembali_login"
                 android:layout_marginTop="30dp"/>
