@@ -14,6 +14,7 @@ class AuthViewModel : ViewModel(){
     private val auth = FirebaseAuth.getInstance()
 
     private val statusLogin = MutableLiveData<Boolean>()
+    private val statusResetPassword = MutableLiveData<Boolean>()
     var messageError: String? = null
 
     fun checkMitra(email: String, password: String){
@@ -50,5 +51,17 @@ class AuthViewModel : ViewModel(){
     }
 
     fun statusLogin() : LiveData<Boolean> = statusLogin
+
+    fun resetPassword(email: String){
+        auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                statusResetPassword.postValue(true)
+            }else{
+                statusResetPassword.postValue(false)
+            }
+        }
+    }
+
+    fun statusResetPassword(): LiveData<Boolean> = statusResetPassword
 
 }

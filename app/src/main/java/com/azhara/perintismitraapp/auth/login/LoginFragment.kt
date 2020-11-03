@@ -68,7 +68,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 checkPartner()
             }
             R.id.btnResetPassword->{
-                view?.findNavController()?.navigate(R.id.action_loginFragment_to_resetPasswordFragment)
+                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_resetPasswordFragment)
             }
             R.id.btnToRegister->{
                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_registerPartnerFragment)

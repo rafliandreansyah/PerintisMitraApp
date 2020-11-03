@@ -45,7 +45,8 @@
         tools:layout="@layout/fragment_reset_password" >
         <action
             android:id="@+id/action_resetPasswordFragment_to_resetPasswordInfoFragment"
-            app:destination="@id/resetPasswordInfoFragment" />
+            app:destination="@id/resetPasswordInfoFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordInfoFragment"
