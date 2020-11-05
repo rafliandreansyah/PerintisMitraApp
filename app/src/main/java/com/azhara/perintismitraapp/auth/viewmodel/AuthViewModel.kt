@@ -15,6 +15,7 @@ class AuthViewModel : ViewModel(){
 
     private val statusLogin = MutableLiveData<Boolean>()
     private val statusResetPassword = MutableLiveData<Boolean>()
+    private val listDataTypeCar = MutableLiveData<ArrayList<String>>()
     var messageError: String? = null
 
     fun checkMitra(email: String, password: String){
@@ -63,5 +64,17 @@ class AuthViewModel : ViewModel(){
     }
 
     fun statusResetPassword(): LiveData<Boolean> = statusResetPassword
+
+    fun getCarType(){
+        val carTypeDb = db.collection("list_car_type")
+
+        carTypeDb.get().addOnCompleteListener { result ->
+            for (query in result.result!!){
+                Log.d("query", query["carType"].toString())
+            }
+        }.addOnFailureListener { exception ->
+
+        }
+    }
 
 }

@@ -113,24 +113,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_edt_car_brand_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="45dp"
-                android:layout_marginTop="20dp"
-                android:hint="@string/merk_mobil"
-                app:endIconMode="dropdown_menu"
-                app:endIconDrawable="@drawable/ic_drop_down"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_edt_car_type_register_car"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
