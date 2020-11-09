@@ -1,6 +1,7 @@
 package com.azhara.perintismitraapp.auth.viewmodel
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -69,12 +70,17 @@ class AuthViewModel : ViewModel(){
         val carTypeDb = db.collection("list_car_type")
 
         carTypeDb.get().addOnCompleteListener { result ->
+            val dataCar = ArrayList<String>()
             for (query in result.result!!){
+                dataCar.add(query["carType"].toString())
                 Log.d("query", query["carType"].toString())
             }
+            listDataTypeCar.postValue(dataCar)
         }.addOnFailureListener { exception ->
-
+            Log.e("Get Car Type", exception.message)
         }
     }
+
+    fun dataCarType(): LiveData<ArrayList<String>> = listDataTypeCar
 
 }

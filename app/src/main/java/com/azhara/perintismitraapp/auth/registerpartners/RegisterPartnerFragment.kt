@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.azhara.perintismitraapp.R
@@ -30,6 +32,7 @@ class RegisterPartnerFragment : Fragment(), View.OnClickListener {
 
         authViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[AuthViewModel::class.java]
         authViewModel.getCarType()
+        getDataCarTypeAndTransmision()
     }
 
     override fun onClick(v: View?) {
@@ -38,6 +41,17 @@ class RegisterPartnerFragment : Fragment(), View.OnClickListener {
                 view?.findNavController()?.navigate(R.id.action_registerPartnerFragment_to_registerPartnerInfoFragment)
             }
         }
+    }
+
+    private fun getDataCarTypeAndTransmision(){
+        authViewModel.dataCarType().observe(viewLifecycleOwner, Observer { data ->
+            val adapter = ArrayAdapter(requireContext(), R.layout.item_list_car_type, data)
+            car_type.setAdapter(adapter)
+        })
+
+        val itemTransmission = listOf<String>("Manual", "Automatic")
+        val transmisionAdapter = ArrayAdapter(requireContext(), R.layout.item_list_car_transmisi, itemTransmission)
+        car_transmision.setAdapter(transmisionAdapter)
     }
 
 }
