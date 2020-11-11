@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tunngu_pemberitahuan_dari_admin_maksimal_3x24_jam_yang_akan_dihubungi_lewat_email_atau_telepon_yang_anda_diajukan"
+                android:text="@string/tunggu_pemberitahuan_dari_admin_maksimal_3x24_jam_yang_akan_dihubungi_lewat_email_atau_telepon_yang_anda_diajukan"
                 android:textAlignment="center"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/colorPrimaryText"/>

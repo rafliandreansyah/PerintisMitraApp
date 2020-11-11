@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:layout_marginHorizontal="45dp"
+                android:layout_marginHorizontal="30dp"
                 tools:ignore="UselessParent">
                 
                 <ImageView
@@ -175,7 +175,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_number_car_register"
-                    android:inputType="phone"
+                    android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -197,11 +197,12 @@
                 android:elevation="4dp">
 
                 <ImageView
-                    android:id="@+id/img_car"
+                    android:id="@+id/img_car_mitra_register"
                     android:src="@color/colorDivider"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/image_car" />
+                    android:contentDescription="@string/image_car"
+                    android:scaleType="centerCrop"/>
             </androidx.cardview.widget.CardView>
 
             <Button
@@ -212,9 +213,10 @@
                 android:layout_marginTop="8dp"/>
 
             <CheckBox
+                android:id="@+id/checkbox_agree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:checked="true"
+                android:checked="false"
                 android:layout_marginHorizontal="45dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/saya_setuju_dengan_syarat_dan_ketentuan_yang_berlaku"/>

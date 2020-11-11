@@ -30,7 +30,7 @@
     <string name="download_dokumen">Download Dokumen</string>
     <string name="kirim_pengajuan">Kirim Pengajuan</string>
     <string name="pengajuan_mitra_berhasil">Pengajuan Mitra Berhasil</string>
-    <string name="tunngu_pemberitahuan_dari_admin_maksimal_3x24_jam_yang_akan_dihubungi_lewat_email_atau_telepon_yang_anda_diajukan">Tunngu pemberitahuan dari admin maksimal 3x24 jam yang akan dihubungi lewat email atau telepon yang anda diajukan</string>
+    <string name="tunggu_pemberitahuan_dari_admin_maksimal_3x24_jam_yang_akan_dihubungi_lewat_email_atau_telepon_yang_anda_diajukan">Tunggu pemberitahuan dari admin maksimal 3x24 jam yang akan dihubungi lewat email atau telepon yang anda diajukan</string>
     <string name="illustration_register_info">illustration register info</string>
     <string name="dashboard">Dashboard</string>
     <string name="icon_notification">icon_notification</string>
