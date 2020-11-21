@@ -1,5 +1,6 @@
 package com.azhara.perintismitraapp.auth.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
@@ -15,6 +16,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.azhara.perintismitraapp.R
 import com.azhara.perintismitraapp.auth.viewmodel.AuthViewModel
+import com.azhara.perintismitraapp.home.HomeActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment(), View.OnClickListener {
@@ -23,6 +26,15 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     private lateinit var toast: Toast
     private lateinit var authViewModel: AuthViewModel
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null){
+            startActivity(Intent(context, HomeActivity::class.java))
+            activity?.finish()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +64,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     private fun mitraStatusLogin(){
         authViewModel.statusLogin().observe(viewLifecycleOwner, Observer {
             if (it){
-                Toast.makeText(context, "Login berhasil", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(context, HomeActivity::class.java))
             }else{
                 Toast.makeText(context, authViewModel.messageError, Toast.LENGTH_SHORT).show()
                 authViewModel.messageError?.let { it1 -> errorMessage(it1) }
