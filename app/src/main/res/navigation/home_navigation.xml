@@ -3,62 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/navigation_dashboard">
 
     <fragment
-        android:id="@+id/dashboardFragment"
+        android:id="@+id/navigation_dashboard"
         android:name="com.azhara.perintismitraapp.home.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/navigation_profile" />
         <action
             android:id="@+id/action_dashboardFragment_to_carBookedFragment"
-            app:destination="@id/carBookedFragment" />
+            app:destination="@id/navigation_car_booked" />
         <action
             android:id="@+id/action_dashboardFragment_to_carFragment"
-            app:destination="@id/carFragment" />
+            app:destination="@id/navigation_car" />
         <action
             android:id="@+id/action_dashboardFragment_to_carRegisterFragment"
-            app:destination="@id/carRegisterFragment" />
+            app:destination="@id/navigation_car_register" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/navigation_profile"
         android:name="com.azhara.perintismitraapp.home.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_edtiProfileFragment"
-            app:destination="@id/edtiProfileFragment" />
+            app:destination="@id/navigation_edit_profile" />
         <action
             android:id="@+id/action_profileFragment_to_changePasswordFragment"
-            app:destination="@id/changePasswordFragment" />
+            app:destination="@id/navigation_change_password" />
     </fragment>
     <fragment
-        android:id="@+id/carFragment"
+        android:id="@+id/navigation_car"
         android:name="com.azhara.perintismitraapp.home.car.CarFragment"
-        android:label="fragment_car"
+        android:label="Car"
         tools:layout="@layout/fragment_car" />
     <fragment
-        android:id="@+id/carRegisterFragment"
+        android:id="@+id/navigation_car_register"
         android:name="com.azhara.perintismitraapp.home.carregister.CarRegisterFragment"
         android:label="fragment_car_register"
         tools:layout="@layout/fragment_car_register" />
     <fragment
-        android:id="@+id/edtiProfileFragment"
+        android:id="@+id/navigation_edit_profile"
         android:name="com.azhara.perintismitraapp.home.profile.editprofile.EdtiProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
-        android:id="@+id/changePasswordFragment"
+        android:id="@+id/navigation_change_password"
         android:name="com.azhara.perintismitraapp.home.profile.changepassword.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
-        android:id="@+id/carBookedFragment"
+        android:id="@+id/navigation_car_booked"
         android:name="com.azhara.perintismitraapp.home.carbooked.CarBookedFragment"
-        android:label="fragment_car_booked"
+        android:label="Car Booked"
         tools:layout="@layout/fragment_car_booked" />
 
 

@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home.HomeActivity"></activity>
+        <activity
+            android:name=".home.HomeActivity"
+            android:theme="@style/AppThemeNoActionBar"></activity>
         <activity
             android:name=".auth.MainActivity"
             android:theme="@style/AppThemeNoActionBar">
