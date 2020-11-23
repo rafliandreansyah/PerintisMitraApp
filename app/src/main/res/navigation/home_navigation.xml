@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.azhara.perintismitraapp.home.dashboard.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
@@ -26,10 +26,10 @@
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.azhara.perintismitraapp.home.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Your Profile"
         tools:layout="@layout/fragment_profile">
         <action
-            android:id="@+id/action_profileFragment_to_edtiProfileFragment"
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
             app:destination="@id/navigation_edit_profile" />
         <action
             android:id="@+id/action_profileFragment_to_changePasswordFragment"
@@ -43,17 +43,17 @@
     <fragment
         android:id="@+id/navigation_car_register"
         android:name="com.azhara.perintismitraapp.home.carregister.CarRegisterFragment"
-        android:label="fragment_car_register"
+        android:label="Car Register"
         tools:layout="@layout/fragment_car_register" />
     <fragment
         android:id="@+id/navigation_edit_profile"
         android:name="com.azhara.perintismitraapp.home.profile.editprofile.EdtiProfileFragment"
-        android:label="fragment_edit_profile"
+        android:label="Edit Profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/navigation_change_password"
         android:name="com.azhara.perintismitraapp.home.profile.changepassword.ChangePasswordFragment"
-        android:label="fragment_change_password"
+        android:label="Change Password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/navigation_car_booked"
