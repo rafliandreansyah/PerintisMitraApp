@@ -1,34 +1,22 @@
 package com.azhara.perintismitraapp.home.profile.editprofile
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.azhara.perintismitraapp.R
+import com.azhara.perintismitraapp.home.profile.viewmodel.EditProfileViewModel
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_edit_profile.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [EdtiProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class EdtiProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var editProfileViewModel: EditProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +26,54 @@ class EdtiProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_edit_profile, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EdtiProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EdtiProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        editProfileViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[EditProfileViewModel::class.java]
+        editProfileViewModel.getDataMitra()
+
+        checkTextWatcher()
+        dataMitra()
+    }
+
+    private fun checkTextWatcher(){
+        val watcher = object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s?.length == 0){
+                    btn_save_edt_profile.isEnabled = false
+                }else{
+                    btn_save_edt_profile.isEnabled = edt_address.text.toString().trim() != "" && edt_name.text.toString().trim() != "" && edt_phone.text.toString().trim() != ""
                 }
             }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        }
+
+        edt_name.addTextChangedListener(watcher)
+        edt_phone.addTextChangedListener(watcher)
+        edt_address.addTextChangedListener(watcher)
     }
+
+    private fun dataMitra(){
+        editProfileViewModel.dataMitra().observe(viewLifecycleOwner, Observer { data ->
+            if (data != null){
+                setData(data.imgUrl, data.owner, data.phone.toString(), data.address)
+            }
+        })
+    }
+
+    private fun setData(imgUrl: String?, name: String?, phoneNumber: String?, address: String?){
+        if (imgUrl != null || imgUrl != ""){
+            context?.let { Glide.with(it).load(imgUrl).into(img_profile) }
+        }
+        edt_name.setText(name)
+        edt_address.setText(address)
+        edt_phone.setText(phoneNumber)
+    }
+
 }

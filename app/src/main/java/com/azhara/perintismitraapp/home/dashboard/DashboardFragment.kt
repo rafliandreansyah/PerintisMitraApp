@@ -31,7 +31,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.btn_setting -> {
-
+                view?.findNavController()?.navigate(R.id.action_dashboardFragment_to_profileFragment)
             }
             R.id.btn_list_car -> {
                 view?.findNavController()?.navigate(R.id.action_dashboardFragment_to_carFragment)
@@ -40,7 +40,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 view?.findNavController()?.navigate(R.id.action_dashboardFragment_to_carBookedFragment)
             }
             R.id.btn_register_car -> {
-
+                view?.findNavController()?.navigate(R.id.action_dashboardFragment_to_carRegisterFragment)
             }
         }
     }
