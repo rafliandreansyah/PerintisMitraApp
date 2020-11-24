@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_car_register" />
     <fragment
         android:id="@+id/navigation_edit_profile"
-        android:name="com.azhara.perintismitraapp.home.profile.editprofile.EdtiProfileFragment"
+        android:name="com.azhara.perintismitraapp.home.profile.editprofile.EditrofileFragment"
         android:label="Edit Profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment

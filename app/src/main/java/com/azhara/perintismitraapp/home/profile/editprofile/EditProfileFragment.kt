@@ -7,14 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.azhara.perintismitraapp.R
 import com.azhara.perintismitraapp.home.profile.viewmodel.EditProfileViewModel
 import com.bumptech.glide.Glide
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
 
-class EdtiProfileFragment : Fragment() {
+class EditrofileFragment : Fragment(), View.OnClickListener {
 
     private lateinit var editProfileViewModel: EditProfileViewModel
 
@@ -32,8 +34,10 @@ class EdtiProfileFragment : Fragment() {
         editProfileViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[EditProfileViewModel::class.java]
         editProfileViewModel.getDataMitra()
 
+        btn_save_edt_profile.setOnClickListener(this)
         checkTextWatcher()
         dataMitra()
+        checkUpdateData()
     }
 
     private fun checkTextWatcher(){
@@ -74,6 +78,44 @@ class EdtiProfileFragment : Fragment() {
         edt_name.setText(name)
         edt_address.setText(address)
         edt_phone.setText(phoneNumber)
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.btn_save_edt_profile -> updateData()
+        }
+    }
+
+    private fun updateData(){
+        val name = edt_name.text.toString().trim()
+        val address = edt_address.text.toString().trim()
+        val phone = edt_phone.text.toString().trim()
+
+        if (name.isEmpty()){
+            layout_edt_profile_name.error = "Nama tidak boleh kosong!"
+            return
+        }
+        else if (address.isEmpty()){
+            layout_edt_profile_address.error = "Alamat tidak boleh kosong!"
+            return
+        }
+        else if (phone.isEmpty()){
+            layout_edt_profile_phone.error = "Nomer handphone tidak boleh kosong!"
+            return
+        }else{
+            editProfileViewModel.updateData(null, name, phone.toLong(), address)
+        }
+
+    }
+
+    private fun checkUpdateData(){
+        editProfileViewModel.updateDataStatus().observe(viewLifecycleOwner, Observer { status ->
+            if (status){
+                context?.let { Toasty.success(it, "Update data sukses", Toast.LENGTH_SHORT, true).show() }
+            }else{
+                context?.let { Toasty.error(it, "Update data gagal", Toast.LENGTH_SHORT, true).show() }
+            }
+        })
     }
 
 }
