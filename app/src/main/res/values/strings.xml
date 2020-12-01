@@ -58,4 +58,8 @@
     <string name="error_message_password_from_firebase">The password is invalid or the user does not have a password.</string>
     <string name="error_message_email_not_register">Akun anda tidak terdaftar mitra perintis!</string>
     <string name="simpan">Simpan</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="ganti_password">Ganti Password</string>
 </resources>

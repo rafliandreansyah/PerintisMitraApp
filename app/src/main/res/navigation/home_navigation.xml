@@ -54,7 +54,13 @@
         android:id="@+id/navigation_change_password"
         android:name="com.azhara.perintismitraapp.home.profile.changepassword.ChangePasswordFragment"
         android:label="Change Password"
-        tools:layout="@layout/fragment_change_password" />
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_navigation_change_password_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:popUpTo="@id/navigation_profile"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_car_booked"
         android:name="com.azhara.perintismitraapp.home.carbooked.CarBookedFragment"

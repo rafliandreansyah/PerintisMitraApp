@@ -103,7 +103,7 @@ class EditrofileFragment : Fragment(), View.OnClickListener {
             layout_edt_profile_phone.error = "Nomer handphone tidak boleh kosong!"
             return
         }else{
-            editProfileViewModel.updateData(null, name, phone.toLong(), address)
+            editProfileViewModel.updateData(name, phone.toLong(), address)
         }
 
     }
