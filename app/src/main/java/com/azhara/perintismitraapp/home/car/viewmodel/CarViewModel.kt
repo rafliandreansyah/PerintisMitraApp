@@ -23,13 +23,33 @@ class CarViewModel : ViewModel(){
 
             }
             if (value != null){
-                Log.d("Car", "${value.toObjects(CarData::class.java)}")
-                val data = value.toObjects(CarData::class.java)
-                dataCar.postValue(data as ArrayList<CarData>?)
+                val cars = ArrayList<CarData>()
+                val doc = value.documents
+                doc.forEach {
+                    val carUpdate = it.toObject(CarData::class.java)
+                    if (carUpdate != null){
+                        carUpdate.carId = it.id
+                        cars.add(carUpdate)
+                    }
+                }
+                Log.d("Car", "$cars")
+                dataCar.postValue(cars)
             }
         }
     }
 
     fun dataCar(): LiveData<ArrayList<CarData>> = dataCar
+
+    fun editCarEnable(isReady: Boolean, carId: String){
+        val carData = db.collection("cars").document(carId)
+        carData.update("statusReady", isReady).addOnSuccessListener {
+            if (it != null){
+                Log.d("CarViewModel", it.toString())
+            }
+        }.addOnFailureListener {
+            Log.e("CarViewModel", it.message.toString())
+        }
+
+    }
 
 }

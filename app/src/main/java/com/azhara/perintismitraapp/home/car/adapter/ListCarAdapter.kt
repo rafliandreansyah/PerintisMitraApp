@@ -14,6 +14,12 @@ import kotlinx.android.synthetic.main.item_list_car.view.*
 
 class ListCarAdapter : ListAdapter<CarData, ListCarAdapter.ListCarViewHolder>(DIFF_CALLBACK){
 
+    private var onItemClicked: ItemClicked? = null
+
+    fun setOnItemClicked(onItemClicked: ItemClicked){
+        this.onItemClicked = onItemClicked
+    }
+
     companion object{
         private val DIFF_CALLBACK = object: DiffUtil.ItemCallback<CarData>(){
             override fun areItemsTheSame(oldItem: CarData, newItem: CarData): Boolean = oldItem == newItem
@@ -41,13 +47,22 @@ class ListCarAdapter : ListAdapter<CarData, ListCarAdapter.ListCarViewHolder>(DI
                 if (data.statusReady == true){
                     tv_item_car_status.text = "Ready"
                     tv_item_car_status.setTextColor(ContextCompat.getColor(context, R.color.colorGreen))
+                    background_disabled.visibility = View.INVISIBLE
                 }else{
                     tv_item_car_status.text = "Disabled"
-                    tv_item_car_status.setTextColor(ContextCompat.getColor(context, R.color.colorGreen))
+                    tv_item_car_status.setTextColor(ContextCompat.getColor(context, R.color.colorRed))
                     tv_item_car_status.elevation = 8F
+                    background_disabled.visibility = View.VISIBLE
+                }
+                itemView.setOnClickListener {
+                    onItemClicked?.onItemClicked(data)
                 }
             }
         }
+    }
+
+    interface ItemClicked{
+        fun onItemClicked(data: CarData)
     }
 
 }

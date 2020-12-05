@@ -59,6 +59,9 @@ dependencies {
     //Toasty
     implementation 'com.github.GrenderG:Toasty:1.5.0'
 
+    //Swipe decoration
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 

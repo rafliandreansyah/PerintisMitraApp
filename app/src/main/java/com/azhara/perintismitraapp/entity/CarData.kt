@@ -5,5 +5,6 @@ data class CarData(
     var carName: String? = null,
     var statusReady: Boolean? = null,
     var year: Int? = null,
-    var price: Long? = null
+    var price: Long? = null,
+    var carId: String? = null
 )

@@ -7,10 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.azhara.perintismitraapp.R
+import com.azhara.perintismitraapp.entity.CarData
 import com.azhara.perintismitraapp.home.car.adapter.ListCarAdapter
 import com.azhara.perintismitraapp.home.car.viewmodel.CarViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.fragment_car.*
 
 class CarFragment : Fragment() {
@@ -38,6 +42,7 @@ class CarFragment : Fragment() {
 
         carViewModel.getDataCar()
         setData()
+        onItemClicked()
     }
 
     private fun setData(){
@@ -47,5 +52,40 @@ class CarFragment : Fragment() {
                 rv_car.adapter = listCarAdapter
             }
         })
+    }
+
+    private fun onItemClicked(){
+        listCarAdapter.setOnItemClicked(object : ListCarAdapter.ItemClicked{
+            override fun onItemClicked(data: CarData) {
+                dialog(data)
+            }
+
+        })
+    }
+
+    private fun dialog(carData: CarData){
+        val dialog = context?.let { MaterialAlertDialogBuilder(it) }
+        if (carData.statusReady == true){
+            dialog?.setTitle("Non Aktifkan Mobil")
+                ?.setMessage("Apakah anda yakin mau menonaktifkan mobil ${carData.carName}?")
+                ?.setNegativeButton("Tidak"){ _, _ ->
+                }
+                ?.setPositiveButton("Iya"){dialog, which ->
+                    carData.carId?.let { editCarActive(false, it) }
+                }
+        }else{
+            dialog?.setTitle("Aktifkan Mobil")
+                ?.setMessage("Apakah anda yakin mau mengaktifkan mobil ${carData.carName}?")
+                ?.setNegativeButton("Tidak"){ _, _ ->
+                }
+                ?.setPositiveButton("Iya"){_, _ ->
+                    carData.carId?.let { editCarActive(true, it) }
+                }
+        }
+        dialog?.show()
+    }
+
+    private fun editCarActive(isActive: Boolean, carId: String){
+        carViewModel.editCarEnable(isActive, carId)
     }
 }
