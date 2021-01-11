@@ -13,11 +13,11 @@ class CarViewModel : ViewModel(){
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
-    private val userEmail = auth.currentUser?.email
+    private val userId = auth.currentUser?.uid
     private val dataCar = MutableLiveData<ArrayList<CarData>>()
 
     fun getDataCar(){
-        val carDb = db.collection("cars").whereEqualTo("partnerId", userEmail)
+        val carDb = db.collection("cars").whereEqualTo("partnerId", userId)
         carDb.addSnapshotListener { value, error ->
             if (error != null){
 

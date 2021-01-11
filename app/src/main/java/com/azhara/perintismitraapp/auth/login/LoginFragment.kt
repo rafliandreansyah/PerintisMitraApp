@@ -58,7 +58,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     private fun checkPartner(){
-        authViewModel.checkMitra(edt_email.text.toString().trim(), edt_password.text.toString().trim())
+        authViewModel.login(edt_email.text.toString().trim(), edt_password.text.toString().trim())
     }
 
     private fun mitraStatusLogin(){

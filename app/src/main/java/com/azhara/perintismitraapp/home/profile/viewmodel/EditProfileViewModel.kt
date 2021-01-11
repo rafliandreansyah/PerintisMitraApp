@@ -14,7 +14,7 @@ import kotlin.collections.HashMap
 
 class EditProfileViewModel : ViewModel(){
 
-    private val mitraEmail = FirebaseAuth.getInstance().currentUser?.email
+    private val mitraId = FirebaseAuth.getInstance().currentUser?.uid
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     private val TAG = EditProfileViewModel::class.java.simpleName
@@ -24,7 +24,7 @@ class EditProfileViewModel : ViewModel(){
     private val checkReAuth = MutableLiveData<Boolean>()
 
     fun getDataMitra(){
-        val mitraDb = mitraEmail?.let { db.collection("partners").document(it) }
+        val mitraDb = mitraId?.let { db.collection("partners").document(it) }
 
         mitraDb?.addSnapshotListener { value, error ->
             if (error != null){
@@ -40,7 +40,7 @@ class EditProfileViewModel : ViewModel(){
     fun dataMitra(): LiveData<Partner> = dataMitra
 
     fun updateData(name: String?, phone: Long?, address: String?){
-        val dbPartner = mitraEmail?.let { db.collection("partners").document(it) }
+        val dbPartner = mitraId?.let { db.collection("partners").document(it) }
 
         val partner = HashMap<String, Any?>()
         partner["name"] = name
@@ -59,7 +59,7 @@ class EditProfileViewModel : ViewModel(){
 
     fun reAuth(oldPassword: String?, newPassword: String?){
         val partner = auth.currentUser
-        val credential = mitraEmail?.let { oldPassword?.let { it1 ->
+        val credential = mitraId?.let { oldPassword?.let { it1 ->
             EmailAuthProvider.getCredential(it,
                 it1
             )

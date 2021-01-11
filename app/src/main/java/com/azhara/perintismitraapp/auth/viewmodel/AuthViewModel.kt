@@ -24,31 +24,32 @@ class AuthViewModel : ViewModel(){
     private val listDataTypeCar = MutableLiveData<ArrayList<String>>()
     var messageError: String? = null
 
-    fun checkMitra(email: String, password: String){
-        val mitraDb = db.collection("partners").document(email)
-        mitraDb.get().addOnSuccessListener { documentSnapshot ->
+    private fun checkMitra(userId: String?){
+        val mitraDb = userId?.let { db.collection("partners").document(it) }
+        mitraDb?.get()?.addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()){
                 val partner = documentSnapshot.toObject(Partner::class.java)
                 if (partner?.statusActive == false){
                     statusLogin.postValue(false)
                     messageError = "Akun anda terblokir, silahkan hubungi admin untuk bantuan!"
                 }else{
-                    login(email, password)
+                    statusLogin.postValue(true)
                 }
             }else{
                 statusLogin.postValue(false)
                 messageError = "Akun anda tidak terdaftar mitra perintis!"
             }
-        }.addOnFailureListener { exception ->
+        }?.addOnFailureListener { exception ->
             statusLogin.postValue(false)
             messageError = exception.message
         }
     }
 
-    private fun login(email: String, password: String){
+    fun login(email: String, password: String){
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful){
-                statusLogin.postValue(true)
+                val userId = auth.currentUser?.uid
+               checkMitra(userId)
             }else{
                 statusLogin.postValue(false)
                 messageError = task.exception?.message.toString()

@@ -43,7 +43,10 @@ class CarBookedAdapter : ListAdapter<CarBooked, CarBookedAdapter.CarBookedViewHo
                 tv_item_car_booked_duration.text = data.duration.toString()
                 tv_item_car_booked_time.text = time
                 tv_item_car_booked_total_price.text = "Rp. ${data.totalPrice}"
-                if (data.statusBooking?.toInt() == 0) {
+                if (data.statusBooking?.toInt() == null){
+                    tv_item_car_booked_status_payment.setTextColor(ContextCompat.getColor(context, R.color.colorRed))
+                    tv_item_car_booked_status_payment.text = "Menunggu Konfirmasi"
+                }else if (data.statusBooking?.toInt() == 0) {
                     tv_item_car_booked_status_payment.text = "On Progress"
                 }else{
                     tv_item_car_booked_status_payment.setTextColor(ContextCompat.getColor(context, R.color.colorGreen))

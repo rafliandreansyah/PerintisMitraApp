@@ -110,11 +110,6 @@ class CarRegisterFragment : Fragment(), View.OnClickListener {
 
     private fun checkEditText(){
 
-        val edtCarType = edt_car_type_register_car.text.toString().trim()
-        val edtTransmission = edt_transmission_register_car.text.toString().trim()
-        val carYear = edt_year_register_car.text.toString().trim()
-        val edtNumberCar = edt_number_register_car.text.toString().trim()
-
         val watcher = object: TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }

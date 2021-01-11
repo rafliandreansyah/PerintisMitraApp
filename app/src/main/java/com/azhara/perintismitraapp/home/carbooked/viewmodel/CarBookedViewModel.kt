@@ -13,12 +13,12 @@ class CarBookedViewModel : ViewModel(){
 
     private val TAG = CarBookedViewModel::class.java.simpleName
     private val db = FirebaseFirestore.getInstance()
-    private val partnerEmail = FirebaseAuth.getInstance().currentUser?.email
+    private val partnerId = FirebaseAuth.getInstance().currentUser?.uid
     private val dataBooked = MutableLiveData<ArrayList<CarBooked>>()
     val data = ArrayList<CarBooked>()
 
     fun getDataCarBooked(){
-        val dbDataBooked = partnerEmail?.let { db.collection("partners").document(it).collection("bookingCar") }
+        val dbDataBooked = partnerId?.let { db.collection("partners").document(it).collection("bookingCar") }
         dbDataBooked?.get()?.addOnSuccessListener { documents ->
             if (documents != null) {
                 for (doc in documents){
