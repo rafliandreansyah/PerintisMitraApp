@@ -136,7 +136,7 @@ class AuthViewModel : ViewModel(){
             transmision = 1
         }
 
-        val dataRegisterPartner = PartnerRegister(email, name, address, phone?.toLong(), typeCar, carYear.toInt(), numberRegister, transmision, img)
+        val dataRegisterPartner = PartnerRegister(email, name, address, phone?.toLong(), typeCar, carYear.toInt(), numberRegister, transmision, img, null)
         val registerDb = db.collection("partner_register").add(dataRegisterPartner)
         registerDb.addOnCompleteListener {
             if (it.isSuccessful){

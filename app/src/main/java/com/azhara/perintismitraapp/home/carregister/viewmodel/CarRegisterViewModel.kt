@@ -72,7 +72,7 @@ class CarRegisterViewModel : ViewModel(){
         carYear: String,
         numberRegister: String
     ) {
-        val dataCar = CarRegister(auth.currentUser?.email, typeCar, transmisionCar, carYear.toLong(), numberRegister, img)
+        val dataCar = CarRegister(auth.currentUser?.email, typeCar, transmisionCar, carYear.toLong(), numberRegister, img, null)
         val db = registerCarDb.collection("car_register").add(dataCar)
         db.addOnSuccessListener {
             statusRegisterCar.postValue(true)

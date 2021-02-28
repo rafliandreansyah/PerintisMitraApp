@@ -9,5 +9,6 @@ data class PartnerRegister (
     var carYear: Int? = null,
     var carNumberRegister: String? = null,
     var carTransmision: Int? = null,
-    var carImg: String? = null
+    var carImg: String? = null,
+    var statusConfirm: Int? = null
 )

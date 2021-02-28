@@ -6,5 +6,6 @@ data class CarRegister (
     var carTransmission: String? = null,
     var carYear: Long? = null,
     var carNumber: String? = null,
-    var carImage: String? = null
+    var carImage: String? = null,
+    var statusConfirm: Int? = null
 )
