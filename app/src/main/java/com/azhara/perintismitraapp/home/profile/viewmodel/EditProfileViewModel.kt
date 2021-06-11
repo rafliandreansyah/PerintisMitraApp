@@ -15,6 +15,7 @@ import kotlin.collections.HashMap
 class EditProfileViewModel : ViewModel(){
 
     private val mitraId = FirebaseAuth.getInstance().currentUser?.uid
+    private val mitraEmail = FirebaseAuth.getInstance().currentUser?.email
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     private val TAG = EditProfileViewModel::class.java.simpleName
@@ -59,7 +60,7 @@ class EditProfileViewModel : ViewModel(){
 
     fun reAuth(oldPassword: String?, newPassword: String?){
         val partner = auth.currentUser
-        val credential = mitraId?.let { oldPassword?.let { it1 ->
+        val credential = mitraEmail?.let { oldPassword?.let { it1 ->
             EmailAuthProvider.getCredential(it,
                 it1
             )
